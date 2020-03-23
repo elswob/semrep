@@ -15,6 +15,7 @@ RUN apt-get update && \
     mkdir $INSTALL
 ADD $MM $INSTALL
 ADD $API $INSTALL
+RUN ls -l $INSTALL
 ADD setup.sh $INSTALL
 ADD nginx.conf /etc/nginx
 ADD start.sh /

@@ -8,12 +8,13 @@
 # These files must be in the same directory as the Dockerfile. Now run
 #  docker build -t ncats/semrep .
 # to build the image.
-FROM ncats/metamap
+FROM semrep_metamap
 ARG INSTALL=/metamap
+ARG VERSION=v1.8
 ARG SEMREP_DIR=$INSTALL/public_semrep
-ARG SEMREP_DB=public_semrep_v1.7_lex_db_15_Linux.tar.bz2
-ARG SEMREP_HIER=public_semrep_v1.7_hier_15_Linux.tar.bz2
-ARG SEMREP=public_semrep_v1.7_Linux.tar.bz2
+ARG SEMREP_DB=public_semrep_v1.8_lex_db_15_Linux.tar.bz2
+ARG SEMREP_HIER=public_semrep_v1.8_hier_15_Linux.tar.bz2
+ARG SEMREP=public_semrep_v1.8_Linux.tar.bz2
 ADD $SEMREP $INSTALL
 ADD $SEMREP_DB $INSTALL
 ADD $SEMREP_HIER $INSTALL

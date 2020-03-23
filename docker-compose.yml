@@ -8,9 +8,19 @@ services:
       dockerfile: Dockerfile
     restart: unless-stopped
     volumes:
-      - /metamap/:${METAMAP_DATA}
+      - ${METAMAP_DATA}:/metamap/
     ports:
       - ${METAMAP_PORT:-18066}:18066
 
+  semrep:
+    container_name: semrep
+    build:
+      context: ./semrep
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    volumes:
+      - ${METAMAP_DATA}:/metamap/
+    ports:
+      - ${SEMREP_PORT:-8067}:8067    
   #depends_on:
   #    - db

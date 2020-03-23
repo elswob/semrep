@@ -5,4 +5,4 @@ cd /metamap/public_mm
 ./bin/wsdserverctl start
 # allow time for the two servers to start
 sleep 30
-./bin/mmserver16
+./bin/mmserver18
