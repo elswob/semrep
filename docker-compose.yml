@@ -1,0 +1,16 @@
+version: "3.3"
+services:
+
+  metamap:
+    container_name: metamap
+    build:
+      context: ./metamap
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    volumes:
+      - /metamap/:${METAMAP_DATA}
+    ports:
+      - ${METAMAP_PORT:-18066}:18066
+
+  #depends_on:
+  #    - db
