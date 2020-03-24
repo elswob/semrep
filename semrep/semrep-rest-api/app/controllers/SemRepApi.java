@@ -64,7 +64,7 @@ public class SemRepApi extends Controller {
         Logger.debug("SemRep[size="+size+",status="+status+" in "
                      +String.format("%1$.3fs", elapsed)+" -- "+args);
         if (0 == status) {
-            File out = new File (work, temp.getFileName()+".sem.v1.7");
+            File out = new File (work, temp.getFileName()+".sem.v1.8");
             if (out.exists())
                 return ok(out).as("application/xml");
         }

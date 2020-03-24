@@ -7,8 +7,8 @@ services:
       context: ./metamap
       dockerfile: Dockerfile
     restart: unless-stopped
-    volumes:
-      - ${METAMAP_DATA}:/metamap/
+    #volumes:
+    #  - ${METAMAP_DATA}:/metamap/
     ports:
       - ${METAMAP_PORT:-18066}:18066
 
@@ -18,9 +18,12 @@ services:
       context: ./semrep
       dockerfile: Dockerfile
     restart: unless-stopped
-    volumes:
-      - ${METAMAP_DATA}:/metamap/
+    #volumes:
+    #  - ${METAMAP_DATA}:/metamap/
     ports:
-      - ${SEMREP_PORT:-8067}:8067    
-  #depends_on:
-  #    - db
+      - ${SEMREP_PORT1:-8067}:8067
+      - ${SEMREP_PORT2:-8066}:8066
+    environment:
+      - ACCEPTED_HOSTS="['127.0.0.1','172.17.0.1','metmap']"    
+    depends_on:
+      - metamap
