@@ -21,6 +21,24 @@ Test the API
 curl -X POST localhost:8067/ -H Content-Type:text/plain      --data-binary "modafinil is a novel stimulant that is effective in the treatment of narcolepsy"
 ```
 
+Test the container
+
+```
+docker exec -it semrep ./bin/semrep.v1.8 -L 2018 -Z 2018AA -X user_data/test.txt
+```
+
+### modify
+
+To let connections in outside of localhost
+
+
+```
+#semrep-rest-api/conf/application.conf
+play.filters.hosts {
+  allowed = ["."]
+}
+```
+
 ### Issues
 
 First tests gave this error

@@ -18,12 +18,13 @@ services:
       context: ./semrep
       dockerfile: Dockerfile
     restart: unless-stopped
-    #volumes:
-    #  - ${METAMAP_DATA}:/metamap/
+    volumes:
+      - ${USER_DATA}:/metamap/public_semrep/user_data
+      - ${API_DATA}:/metamap/public_semrep/work
     ports:
       - ${SEMREP_PORT1:-8067}:8067
       - ${SEMREP_PORT2:-8066}:8066
     environment:
-      - ACCEPTED_HOSTS="['127.0.0.1','172.17.0.1','ieu-db-interface.epi.bris.ac.uk']"    
+      - ACCEPTED_HOSTS="['127.0.0.1','172.17.0.1']"    
     depends_on:
       - metamap
