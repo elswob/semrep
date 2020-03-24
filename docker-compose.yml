@@ -24,6 +24,6 @@ services:
       - ${SEMREP_PORT1:-8067}:8067
       - ${SEMREP_PORT2:-8066}:8066
     environment:
-      - ACCEPTED_HOSTS="['127.0.0.1','172.17.0.1','metmap']"    
+      - ACCEPTED_HOSTS="['127.0.0.1','172.17.0.1','ieu-db-interface.epi.bris.ac.uk']"    
     depends_on:
       - metamap
