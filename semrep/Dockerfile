@@ -23,6 +23,8 @@ ADD start.sh /
 # this assumes (cd semrep-rest-api && ./gradlew dist)
 ADD semrep-rest-api/build/distributions/playBinary.tar $SEMREP_DIR
 WORKDIR $SEMREP_DIR
+#fix issues with abgenemod.so
+RUN cp lib/libpcre.so.0.0.1 lib/libpcre.so.1
 RUN /bin/bash -c '../setup.sh'
 EXPOSE 8067
 ENTRYPOINT ["/start.sh"]

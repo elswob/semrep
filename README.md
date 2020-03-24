@@ -14,3 +14,25 @@ Test metamap
 ```
 docker run --rm -t -p 18066:18066 semrep_metamap
 ```
+
+Test the API
+
+```
+curl -X POST localhost:8067/ -H Content-Type:text/plain      --data-binary "modafinil is a novel stimulant that is effective in the treatment of narcolepsy"
+```
+
+### Issues
+
+First tests gave this error
+
+```
+! System error
+! 'dlopen("/metamap/public_semrep/bin/abgenemod.so") failed in load_foreign_resource/1: libpcre.so.1: cannot open shared object file: No such file or directory'
+
+```
+
+Fixed this:
+
+```
+cp lib/libpcre.so.0.0.1 lib/libpcre.so.1
+```
