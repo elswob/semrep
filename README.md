@@ -1,4 +1,12 @@
-This repository contains docker files created for various projects.
+# Background
+
+Based on this repo - https://github.com/ncats/docker/tree/master/semrep
+
+Added docker-compose to combine the metamap and semrep images/containers.
+
+For more info on setup see metamap and semrep README.md
+
+
 # semrep
 
 The tar.bz2 files get uncompressed automatically during image creation
