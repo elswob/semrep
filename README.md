@@ -24,7 +24,7 @@ curl -X POST localhost:8067/ -H Content-Type:text/plain      --data-binary "moda
 Test the container
 
 ```
-docker exec -it semrep ./bin/semrep.v1.8 -L 2018 -Z 2018AA -X user_data/test.txt
+docker exec -it semrep ./bin/semrep.v1.8 -L 2018 -Z 2018AA -F user_data/test.txt
 ```
 
 ### modify
