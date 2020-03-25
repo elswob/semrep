@@ -27,6 +27,16 @@ Test the container
 docker exec -it semrep ./bin/semrep.v1.8 -L 2018 -Z 2018AA -F user_data/test.txt
 ```
 
+### Options
+
+MetaMap - https://metamap.nlm.nih.gov/Docs/MM_2016_Usage.pdf
+
+`--threshold 123`
+
+Restricts output to UMLS candidate concepts whose evaluation score equals or exceeds the specified threshold. Judicious use of this option can exclude false positives when some input text has no close matches in the Metathesaurus. An appropriate threshold can usually be determined simply by examining MetaMap output for typical text in a given application.
+
+
+
 ### modify
 
 To let connections in outside of localhost
